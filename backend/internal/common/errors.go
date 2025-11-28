@@ -159,16 +159,6 @@ func (e *ReservedClaimError) Error() string {
 }
 func (e *ReservedClaimError) HttpStatusCode() int { return http.StatusBadRequest }
 
-type InvalidLdapExtraAttributeTypeError struct {
-	Type string
-}
-
-func (e *InvalidLdapExtraAttributeTypeError) Error() string {
-	return fmt.Sprintf("LdapExtraAttribute type %s is invalid", e.Type)
-}
-
-func (e *InvalidLdapExtraAttributeTypeError) HttpStatusCode() int { return http.StatusBadRequest }
-
 type DuplicateClaimError struct {
 	Key string
 }
