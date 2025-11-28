@@ -17,9 +17,8 @@ CREATE TABLE custom_claims
     CONSTRAINT custom_claims_unique UNIQUE (key, user_id, user_group_id, is_ldap),
     CHECK (user_id IS NOT NULL OR user_group_id IS NOT NULL)
 );
-INSERT INTO custom_claims (id, created_at, key, value, user_id, user_group_id, is_ldap)
-SELECT *, false FROM custom_claims_old;
+INSERT INTO custom_claims (id, created_at, key, value, user_id, user_group_id, is_ldap) SELECT *, false FROM custom_claims_old;
 DROP TABLE custom_claims_old;
-insert into app_config_variables (key, value) values ('ldapExtraAttributes', '{"user":[],"group":[]}') on conflict (key) do nothing
+insert into app_config_variables (key, value) values ('ldapExtraAttributes', '{"user":[],"group":[]}') on conflict (key) do nothing;
 COMMIT;
 PRAGMA foreign_keys=ON;
