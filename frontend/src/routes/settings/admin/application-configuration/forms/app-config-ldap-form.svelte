@@ -67,10 +67,8 @@
 	let { inputs, ...form } = $derived(createForm(formSchema, appConfig));
 
 	async function onSubmit() {
-    console.log('data called');
     const data = form.validate();
-    console.log(data);
-		if (!data) return false;
+    if (!data) return false;
 		await callback({
 			...data,
 			ldapEnabled: true
@@ -100,6 +98,7 @@
 
 		ldapSyncing = false;
 	}
+
 </script>
 
 <form onsubmit={preventDefault(onSubmit)}>

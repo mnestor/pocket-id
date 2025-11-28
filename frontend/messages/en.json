@@ -470,6 +470,8 @@
 	"light": "Light",
 	"dark": "Dark",
 	"system": "System",
+  "ldap_extra_attributes": "Ldap Attributes Retrieved",
+  "ldap_extra_attributes_description": "Additional LDAP attributes fetched during user and group synchronization",
   "ldap_extra_user_attributes": "User Attributes",
   "ldap_extra_user_attributes_description": "Specify additional LDAP attributes to fetch and store for each user.",
   "ldap_extra_group_attributes": "Group Attributes",
