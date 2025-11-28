@@ -166,18 +166,7 @@ type DuplicateClaimError struct {
 func (e *DuplicateClaimError) Error() string {
 	return fmt.Sprintf("Claim %s is already defined", e.Key)
 }
-
 func (e *DuplicateClaimError) HttpStatusCode() int { return http.StatusBadRequest }
-
-type DuplicateLdapAttributeError struct {
-	Key string
-}
-
-func (e *DuplicateLdapAttributeError) Error() string {
-	return fmt.Sprintf("LdapAttribute %s is already defined", e.Key)
-}
-
-func (e *DuplicateLdapAttributeError) HttpStatusCode() int { return http.StatusBadRequest }
 
 type OidcInvalidCodeVerifierError struct{}
 
